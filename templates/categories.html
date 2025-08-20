@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Categories</h2>
+<form method="post">
+    <input type="text" name="name" placeholder="Category name" required>
+    <input type="text" name="description" placeholder="Description">
+    <button type="submit">Add</button>
+</form>
+<ul>
+{% for cat in categories %}
+    <li>{{ cat.name }} - {{ cat.description }}</li>
+{% endfor %}
+</ul>
+{% endblock %}

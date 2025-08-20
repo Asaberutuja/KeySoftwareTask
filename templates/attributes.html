@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Attributes</h2>
+<form method="post">
+    <input type="text" name="name" placeholder="Attribute name" required>
+    <select name="dataType">
+        <option value="string">String</option>
+        <option value="int">Integer</option>
+        <option value="float">Float</option>
+        <option value="boolean">Boolean</option>
+    </select>
+    <button type="submit">Add</button>
+</form>
+<ul>
+{% for attr in attributes %}
+    <li>{{ attr.name }} ({{ attr.dataType }})</li>
+{% endfor %}
+</ul>
+{% endblock %}
